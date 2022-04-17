@@ -12,12 +12,12 @@ using StringTools;
 class Achievements {
 	public static var achievementsStuff:Array<Dynamic> = [ //Name, Description, Achievement save tag, Hidden achievement
 		["Freaky on a Friday Night",	"Play on a Friday... Night.",						'friday_night_play',	 true],
-		["She Calls Me Daddy Too",		"Beat Week 1 on Hard with no Misses.",				'week1_nomiss',			false],
-		["No More Tricks",				"Beat Week 2 on Hard with no Misses.",				'week2_nomiss',			false],
-		["Call Me The Hitman",			"Beat Week 3 on Hard with no Misses.",				'week3_nomiss',			false],
-		["Lady Killer",					"Beat Week 4 on Hard with no Misses.",				'week4_nomiss',			false],
-		["Missless Christmas",			"Beat Week 5 on Hard with no Misses.",				'week5_nomiss',			false],
-		["Highscore!!",					"Beat Week 6 on Hard with no Misses.",				'week6_nomiss',			false],
+		["Red-efeated",		"Beat Week 1 on Hard with no Misses.",				'week1_nomiss',			false],
+		["Orange was the impostor",				"Beat Week 2 on Hard with no Misses.",				'week2_nomiss',			false],
+		["Not now, Impostor!",			"Beat Week 3 on Hard with no Misses.",				'week3_nomiss',			false],
+		["Victory",					"Beat Week 4 on Hard with no Misses.",				'week4_nomiss',			false],
+		["Low chances to lose",			"Beat Week 5 on Hard with no Misses.",				'week5_nomiss',			false],
+		["No-Color",					"Beat Week 6 on Hard with no Misses.",				'week6_nomiss',			false],
 		["You'll Pay For That...",		"Beat Week 7 on Hard with no Misses.",				'week7_nomiss',			 true],
 		["What a Funkin' Disaster!",	"Complete a Song with a rating lower than 20%.",	'ur_bad',				false],
 		["Perfectionist",				"Complete a Song with a rating of 100%.",			'ur_good',				false],
@@ -130,7 +130,7 @@ class AchievementObject extends FlxSpriteGroup {
 		ClientPrefs.saveSettings();
 
 		var id:Int = Achievements.getAchievementIndex(name);
-		var achievementBG:FlxSprite = new FlxSprite(60, 50).makeGraphic(420, 120, FlxColor.BLACK);
+		var achievementBG:FlxSprite = new FlxSprite(60, 50).makeGraphic(420, 120, FlxColor.GREY);
 		achievementBG.scrollFactor.set();
 
 		var achievementIcon:FlxSprite = new FlxSprite(achievementBG.x + 10, achievementBG.y + 10).loadGraphic(Paths.image('achievementgrid'), true, 150, 150);
@@ -142,11 +142,11 @@ class AchievementObject extends FlxSpriteGroup {
 		achievementIcon.antialiasing = ClientPrefs.globalAntialiasing;
 
 		var achievementName:FlxText = new FlxText(achievementIcon.x + achievementIcon.width + 20, achievementIcon.y + 16, 280, Achievements.achievementsStuff[id][0], 16);
-		achievementName.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT);
+		achievementName.setFormat(Paths.font("sus.ttf"), 16, FlxColor.BLACK, LEFT);
 		achievementName.scrollFactor.set();
 
 		var achievementText:FlxText = new FlxText(achievementName.x, achievementName.y + 32, 280, Achievements.achievementsStuff[id][1], 16);
-		achievementText.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT);
+		achievementText.setFormat(Paths.font("sus.ttf"), 16, FlxColor.BLACK, LEFT);
 		achievementText.scrollFactor.set();
 
 		add(achievementBG);
